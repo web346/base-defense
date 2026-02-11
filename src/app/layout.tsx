@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "BaseDefense - Tower Defense",
   description: "Defend your base in this Web3 tower defense game. Earn shards and forge modules onchain.",
   manifest: "/manifest.json",
+  other: {
+    "base:app_id": "698c73f0ca7c92c3cb5bcbcb",
+  },
 };
 
 export const viewport: Viewport = {
