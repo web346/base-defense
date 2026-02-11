@@ -13,9 +13,15 @@ model Player {
   shards        Int      @default(0)
   highestLevel  Int      @default(0)
   forgeNonce    Int      @default(0)
+  dailyStreak   Int      @default(0)
+  lastDailyDay  Int      @default(0)
+  referralCode  String   @unique @default(cuid())
+  referredBy    String?
+  referralCount Int      @default(0)
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
   runs          Run[]
+  dailyAttempts DailyAttempt[]
 }
 
 model Run {
@@ -44,4 +50,51 @@ model ForgeLog {
   createdAt   DateTime @default(now())
 
   @@index([wallet])
+}
+
+model DailyChallenge {
+  id          String   @id @default(cuid())
+  day         Int      @unique
+  levelId     Int
+  modifiers   String   // JSON: { "towerTypes": ["frost"], "enemySpeedMult": 1.5, etc }
+  shardReward Int
+  bonusReward Int      @default(0)
+  createdAt   DateTime @default(now())
+  attempts    DailyAttempt[]
+}
+
+model DailyAttempt {
+  id          String   @id @default(cuid())
+  playerId    String
+  player      Player   @relation(fields: [playerId], references: [id])
+  challengeId String
+  challenge   DailyChallenge @relation(fields: [challengeId], references: [id])
+  completed   Boolean  @default(false)
+  timeMs      Int?
+  createdAt   DateTime @default(now())
+
+  @@unique([playerId, challengeId])
+  @@index([challengeId])
+}
+
+model SeasonalEvent {
+  id          String   @id @default(cuid())
+  name        String
+  theme       String   // halloween, christmas, lunar, etc
+  startDate   DateTime
+  endDate     DateTime
+  levels      String   // JSON array of special level configs
+  rewards     String   // JSON: { moduleIds: [13, 14], shardBonus: 50 }
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}
+
+model Referral {
+  id          String   @id @default(cuid())
+  referrer    String   // wallet of referrer
+  referee     String   @unique // wallet of new user
+  rewarded    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+
+  @@index([referrer])
 }

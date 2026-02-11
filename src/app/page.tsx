@@ -68,29 +68,57 @@ export default function HomePage() {
             </p>
           </Link>
 
+          {/* Daily Challenge */}
           <Link
-            href="/loadout"
-            className="block rounded-lg bg-bd-card border border-gray-700 p-6 text-center hover:border-bd-accent transition-colors"
+            href="/daily"
+            className="block rounded-lg bg-gradient-to-r from-bd-gold/20 to-orange-500/20 border border-bd-gold/50 p-6 text-center hover:border-bd-gold transition-colors"
           >
-            <span className="text-bd-gold font-semibold">Loadout</span>
-            <p className="text-sm text-gray-400 mt-1">Equip modules</p>
+            <span className="text-bd-gold font-bold text-lg">Daily Challenge</span>
+            <p className="text-sm text-orange-200 mt-1">New challenge every day!</p>
           </Link>
 
+          {/* Events */}
           <Link
-            href="/forge"
-            className="block rounded-lg bg-bd-card border border-gray-700 p-6 text-center hover:border-bd-accent transition-colors"
+            href="/events"
+            className="block rounded-lg bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/50 p-6 text-center hover:border-purple-400 transition-colors"
           >
-            <span className="text-bd-gold font-semibold">Forge</span>
-            <p className="text-sm text-gray-400 mt-1">Convert shards to modules</p>
+            <span className="text-purple-400 font-bold">Seasonal Events</span>
+            <p className="text-sm text-purple-200 mt-1">Limited-time rewards</p>
           </Link>
 
-          <Link
-            href="/leaderboard"
-            className="block rounded-lg bg-bd-card border border-gray-700 p-6 text-center hover:border-bd-accent transition-colors"
-          >
-            <span className="text-bd-gold font-semibold">Leaderboard</span>
-            <p className="text-sm text-gray-400 mt-1">Top players & forgers</p>
-          </Link>
+          <div className="grid grid-cols-2 gap-4">
+            <Link
+              href="/loadout"
+              className="block rounded-lg bg-bd-card border border-gray-700 p-4 text-center hover:border-bd-accent transition-colors"
+            >
+              <span className="text-bd-gold font-semibold">Loadout</span>
+              <p className="text-xs text-gray-400 mt-1">Equip modules</p>
+            </Link>
+
+            <Link
+              href="/forge"
+              className="block rounded-lg bg-bd-card border border-gray-700 p-4 text-center hover:border-bd-accent transition-colors"
+            >
+              <span className="text-bd-gold font-semibold">Forge</span>
+              <p className="text-xs text-gray-400 mt-1">Craft modules</p>
+            </Link>
+
+            <Link
+              href="/leaderboard"
+              className="block rounded-lg bg-bd-card border border-gray-700 p-4 text-center hover:border-bd-accent transition-colors"
+            >
+              <span className="text-bd-gold font-semibold">Leaderboard</span>
+              <p className="text-xs text-gray-400 mt-1">Top players</p>
+            </Link>
+
+            <Link
+              href="/referral"
+              className="block rounded-lg bg-bd-card border border-gray-700 p-4 text-center hover:border-bd-accent transition-colors"
+            >
+              <span className="text-bd-gold font-semibold">Referrals</span>
+              <p className="text-xs text-gray-400 mt-1">Invite friends</p>
+            </Link>
+          </div>
         </div>
 
         {/* Tower preview */}
