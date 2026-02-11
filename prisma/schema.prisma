@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Player {
+  id            String   @id @default(cuid())
+  wallet        String   @unique
+  shards        Int      @default(0)
+  highestLevel  Int      @default(0)
+  forgeNonce    Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  runs          Run[]
+}
+
+model Run {
+  id          String   @id @default(cuid())
+  playerId    String
+  player      Player   @relation(fields: [playerId], references: [id])
+  level       Int
+  seed        String
+  completed   Boolean  @default(false)
+  shardsEarned Int     @default(0)
+  timeMs      Int?
+  checkpoints String?  // JSON array of checkpoint data
+  createdAt   DateTime @default(now())
+
+  @@index([playerId])
+  @@index([level, completed, timeMs])
+}
+
+model ForgeLog {
+  id          String   @id @default(cuid())
+  wallet      String
+  moduleId    Int
+  amount      Int
+  shardsCost  Int
+  txHash      String?
+  createdAt   DateTime @default(now())
+
+  @@index([wallet])
+}

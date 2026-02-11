@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sat: env(safe-area-inset-top);
+  --sab: env(safe-area-inset-bottom);
+}
+
+html {
+  overscroll-behavior-y: contain;
+}
+
+body {
+  @apply bg-bd-dark text-gray-100 antialiased;
+  padding-top: var(--sat);
+  padding-bottom: var(--sab);
+  -webkit-text-size-adjust: 100%;
+}
+
+button, a {
+  @apply touch-manipulation;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-bd-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-600;
+}
