@@ -1,28 +1,28 @@
 {
   "accountAssociation": {
-    "header": "",
-    "payload": "",
-    "signature": ""
+    "header": "eyJmaWQiOjI2ODkxNTEsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHgyRjRjZDAxQjVlNTQwODhERTQxYjgxQzFmZEIwZjY3MjUyZTQyMjQ2In0",
+    "payload": "eyJkb21haW4iOiJiYXNlLWRlZmVuc2Uta2FwcGEudmVyY2VsLmFwcCJ9",
+    "signature": "j-g7OP-0elxvL77o52r42XdMajCNPHrjLeAIrWuDYJEOZDMHPZ1wKiKXj0BLFBxFz9H2tkxMOziors5vnU6wZBs"
   },
   "frame": {
     "version": "1",
     "name": "BaseDefense",
     "subtitle": "Tower Defense Game",
-    "iconUrl": "https://base-defense.vercel.app/icon.png",
-    "homeUrl": "https://base-defense.vercel.app",
-    "splashImageUrl": "https://base-defense.vercel.app/splash.png",
+    "iconUrl": "https://base-defense-kappa.vercel.app/icon.png",
+    "homeUrl": "https://base-defense-kappa.vercel.app",
+    "splashImageUrl": "https://base-defense-kappa.vercel.app/splash.png",
     "splashBackgroundColor": "#0a0a12",
     "primaryCategory": "games",
     "tags": ["tower-defense", "web3", "nft", "base"],
-    "heroImageUrl": "https://base-defense.vercel.app/hero.png",
+    "heroImageUrl": "https://base-defense-kappa.vercel.app/hero.png",
     "tagline": "Defend. Earn. Forge.",
     "description": "A Web3 tower defense game where you defend your base, earn shards, and forge onchain module NFTs to upgrade your towers.",
     "screenshotUrls": [
-      "https://base-defense.vercel.app/screenshot1.png"
+      "https://base-defense-kappa.vercel.app/screenshot1.png"
     ],
     "ogTitle": "BaseDefense - Tower Defense Game",
     "ogDescription": "Defend your base and forge onchain modules in this Web3 tower defense game.",
-    "ogImageUrl": "https://base-defense.vercel.app/og.png",
+    "ogImageUrl": "https://base-defense-kappa.vercel.app/og.png",
     "noindex": false
   }
 }
